@@ -1,0 +1,12 @@
+name: echo-read-secret
+version: 0.1.0
+description: Basic function that repeats whatever we give it as an entry and adds a secret from k8s
+home: https://github.com/OpenIndustryCloud/fission-functions
+sources:
+  - https://github.com/OpenIndustryCloud/fission-functions/echo_read_secret
+maintainers: 
+  - name: Samuel Cozannet
+    email: samuel.cozannet@madeden.com  
+environment: 
+  - name: python
+    image: fission/python-env:0.3.0
