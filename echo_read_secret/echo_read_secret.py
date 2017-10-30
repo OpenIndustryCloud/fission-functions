@@ -8,7 +8,7 @@ def main():
 
     config.load_incluster_config()
 
-    v1=client.CoreV1Api()
+    v1 = client.CoreV1Api()
 
     # This requires a secret to exist in the environment
     #     kubectl create secret generic echo --from-literal=content=foobar
