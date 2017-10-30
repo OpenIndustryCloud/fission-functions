@@ -1,12 +1,14 @@
 import base64
 from flask import request, jsonify
-from kubernetes import client, config
+from kubernetes import config
+config.load_incluster_config()
+from kubernetes import client
 
 
 def main():
     input = request.json
 
-    config.load_incluster_config()
+    # config.load_incluster_config()
 
     v1 = client.CoreV1Api()
 
