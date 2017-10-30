@@ -9,4 +9,4 @@ maintainers:
     email: samuel.cozannet@madeden.com  
 environment: 
   - name: python
-    image: fission/python-env:0.3.0
+    image: gcr.io/landg-179815/python-env:latest

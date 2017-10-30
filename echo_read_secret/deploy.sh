@@ -3,9 +3,9 @@
 ENVIRONMENT="python"
 FUNCTION="echo"
 
-fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image fission/${ENVIRONMENT}-env:0.3.0
+fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image gcr.io/landg-179815/${ENVIRONMENT}-env:latest
 
-fission fn create --name ${FUNCTION} --env ${ENVIRONMENT} --code ./echo.py
+fission fn create --name ${FUNCTION} --env ${ENVIRONMENT} --code ./echo_read_secret.py
 
 echo "this function will convert a JSON POST data to new JSON with a random risk added to it"
 echo 

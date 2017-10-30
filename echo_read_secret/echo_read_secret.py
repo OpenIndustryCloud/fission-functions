@@ -1,6 +1,7 @@
+import base64
 from flask import request, jsonify
-
 from kubernetes import client, config
+
 
 def main():
     input = request.json
@@ -15,6 +16,6 @@ def main():
         if secrets.metadata.name == 'echo':
             content = base64.b64decode(secrets.data['content'])
 
-    output = { 'input': input, 'secret': content }
+    output = {'input': input, 'secret': content}
 
     return jsonify(output)
