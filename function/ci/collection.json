@@ -1,13 +1,13 @@
 {
 	"info": {
-		"name": "hello",
-		"_postman_id": "1a0a085e-a303-547b-cc9e-047a20ee885f",
+		"name": "function",
+		"_postman_id": "d300a4bf-44ab-8021-f041-1252bc19622d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "hello",
+			"name": "function",
 			"event": [
 				{
 					"listen": "test",
@@ -20,15 +20,24 @@
 							""
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"test-string\", \"function test\");",
+							""
+						]
+					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"disabled": true
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -36,21 +45,18 @@
 					"raw": "{ \"test\": \"{{test-string}}\" } "
 				},
 				"url": {
-					"raw": "http://router.fission.svc.cluster.local/staging/hello",
+					"raw": "http://localhost:8888",
 					"protocol": "http",
 					"host": [
-						"router.fission.svc.cluster.local"
+						"localhost"
 					],
-					"path": [
-						"staging",
-						"hello"
-					]
+					"port": "8888"
 				},
-				"description": "Simple echo test"
+				"description": "Simple JSON POST"
 			},
 			"response": [
 				{
-					"id": "6231031e-d141-4397-8ccc-396fc3a4fce2",
+					"id": "c75e1a9d-bee9-4d73-8843-eae081531d7a",
 					"name": "echo-test",
 					"originalRequest": {
 						"method": "POST",
@@ -66,17 +72,12 @@
 							"raw": "{ \"test\": \"echo test\" } "
 						},
 						"url": {
-							"raw": "http://fission.landg.madeden.net/echo",
+							"raw": "http://localhost:888",
 							"protocol": "http",
 							"host": [
-								"fission",
-								"landg",
-								"madeden",
-								"net"
+								"locahost"
 							],
-							"path": [
-								"echo"
-							]
+							"port": "8888"
 						}
 					},
 					"status": "OK",
