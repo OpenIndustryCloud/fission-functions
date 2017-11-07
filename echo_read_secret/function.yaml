@@ -9,4 +9,4 @@ maintainers:
     email: samuel.cozannet@madeden.com  
 environment: 
   - name: python
-    image: gcr.io/landg-179815/python-env:latest
+    image: gcr.io/beta-180508/python-env:latest

@@ -3,7 +3,7 @@
 ENVIRONMENT="python"
 FUNCTION="echo"
 
-fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image gcr.io/landg-179815/${ENVIRONMENT}-env:latest
+fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image gcr.io/beta-180508/${ENVIRONMENT}-env:latest
 
 fission fn create --name ${FUNCTION} --env ${ENVIRONMENT} --code ./echo_read_secret.py
 

@@ -4,7 +4,7 @@ ENVIRONMENT="python-twilio"
 FUNCTION="send-sms"
 CODE="send_sms.py"
 
-fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image gcr.io/landg-179815/python-env:latest
+fission env get --name ${ENVIRONMENT} || fission env create --name ${ENVIRONMENT} --image gcr.io/beta-180508/python-env:latest
 
 fission fn create --name ${FUNCTION} --env ${ENVIRONMENT}-twilio --code ./${CODE}
 

@@ -10,7 +10,7 @@ docker run --rm \
 	-p 8888:8888 \
 	-v $PWD:/userfunc \
 	--name ${ENVIRONMENT} \
-	gcr.io/landg-179815/${ENVIRONMENT}-env:latest &
+	gcr.io/beta-180508/${ENVIRONMENT}-env:latest &
 
 # sleeping to let the container start
 sleep 3
